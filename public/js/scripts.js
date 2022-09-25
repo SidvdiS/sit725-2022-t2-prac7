@@ -65,10 +65,18 @@ imgSlideArray = [
   "../images/slide3.jpg",
 ];
 
+msgArray = [
+  "Basic implementation of socket.io (Pictures Slide Show)",
+  "Socket.io library allows communication between client and server.",
+  "Used in chat application.",
+  "Robust, Easy to use and implement",
+];
+
 let socket = io();
 
 socket.on("slideShow", (msg) => {
   $("header").css({ "background-image": "url(" + imgSlideArray[msg] + ")" });
+  $(".topic").text(msgArray[msg]);
 });
 
 $(document).ready(function () {
